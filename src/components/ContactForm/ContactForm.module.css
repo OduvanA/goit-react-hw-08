@@ -1,0 +1,45 @@
+.container {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  max-width: 320px;
+}
+
+.input {
+  display: block;
+  min-width: 300px;
+  padding: 8px;
+  outline: transparent;
+  outline-offset: 2px;
+  border: 1px solid #242424;
+  border-radius: 3px;
+}
+
+.input:active,
+.input:focus {
+  border-color: rgb(61, 19, 19);
+}
+
+.button {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  background-color: rgb(210, 207, 207);
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(61, 19, 19);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}

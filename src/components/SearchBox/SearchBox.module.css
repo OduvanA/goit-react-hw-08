@@ -1,0 +1,24 @@
+.container {
+
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 320px;
+
+}
+
+.input {
+  display: block;
+  min-width: 300px;
+  padding: 8px;
+  outline: transparent;
+  outline-offset: 2px;
+  border: 1px solid #242424;
+  border-radius: 3px;
+}
+
+.input:active,
+.input:focus {
+  border-color: rgb(61, 19, 19);
+}
