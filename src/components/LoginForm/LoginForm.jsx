@@ -26,7 +26,7 @@ export default function LoginForm() {
           <Field className={css.input} type="password" name="password"/>
         </label>
 
-      <button className={css.button} type="submit">Register</button>
+      <button className={css.button} type="submit">Log in</button>
       </Form>
     </Formik>
   );
