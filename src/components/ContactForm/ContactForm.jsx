@@ -37,7 +37,7 @@ export default function ContactForm() {
       number: "",
     }} onSubmit={handleSubmit}
     validationSchema={ContactsSchema}>
-      <Form className={css.container}> 
+      <Form className={css.container} autoComplete="off"> 
         <div>
           <label className={css.label} htmlFor={nameFieldId}>Name</label>
           <Field className={css.input} type="text" name="name" id={nameFieldId}></Field>
