@@ -12,8 +12,6 @@ const ContactsPage = lazy(() => import('../../pages/ContactsPage/ContactsPage'))
 
 export default function App() {
 
-
-
   return (
 
     <Layout>
