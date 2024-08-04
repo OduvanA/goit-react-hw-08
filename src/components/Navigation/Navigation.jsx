@@ -15,7 +15,7 @@ export default function Navigation() {
       <nav className={css.container}>
         <NavLink to="/" className={buildLinkClass}>Home</NavLink>
       {isLoggedIn &&
-        (<NavLink to="/contacts" className={buildLinkClass}>Movies</NavLink>)}
+        (<NavLink to="/contacts" className={buildLinkClass}>Phonebook</NavLink>)}
       </nav>
   );
 }

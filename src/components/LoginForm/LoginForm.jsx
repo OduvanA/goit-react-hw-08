@@ -13,13 +13,13 @@ export default function LoginForm() {
 
   return (
     <Formik initialValues={{
-      name: '',
+      email: '',
       password: '',
     }} onSubmit={handleSubmit}>
       <Form className={css.container} autoComplete="off"> 
         <label className={css.label}>
-          Userame
-          <Field className={css.input} type="text" name="name" />
+          Email
+          <Field className={css.input} type="email" name="email" />
         </label>
         <label className={css.label}>
           Password
