@@ -1,5 +1,5 @@
-// import { FaPhone } from "react-icons/fa6";
-// import { IoPerson } from "react-icons/io5";
+import { FaPhone } from "react-icons/fa6";
+import { IoPerson } from "react-icons/io5";
 import css from "./Contact.module.css"
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operations";
@@ -7,7 +7,7 @@ import { useState } from "react";
 import EditContactForm from "../EditContactForm/EditContactForm";
 
 
-export default function Contact({ id, name, number }) {
+export default function Contact({ contact: { id, name, number } }) {
   const [isEditing, setIsEditing] = useState(false);
     const [deleteModal, setDeleteModal] = useState(false);
     const dispatch = useDispatch();
@@ -26,12 +26,12 @@ export default function Contact({ id, name, number }) {
             {!isEditing ? (
                 <div >
                     <div >
-                        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt={name} />
-                        <p>{name}</p>
+                        <p><IoPerson className={css.icon} size="14" />
+                        {name}</p>
                     </div>
                     <div >
-                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/phone-icon.png" alt={number} />
-                        <p>{number}</p>
+                        <p><FaPhone className={css.icon} size="14" />
+                        {number}</p> 
                     </div>
                     <div >
                         <button onClick={() => setIsEditing(true)}>Edit</button>

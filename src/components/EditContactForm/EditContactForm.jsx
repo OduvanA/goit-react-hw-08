@@ -4,28 +4,39 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 
 const EditContactForm = ({ id, name, number, onCancel }) => {
+
+    const ContactsSchema = Yup.object().shape({
+        name: Yup.string()
+            .trim()
+            .min(3, "name must be at least 3 characters")
+            .max(50, "you reached the max number of characters")
+            .required("Required"),
+        number: Yup.string()
+            .trim()
+            .min(3, "phone number must be at least 3 characters")
+            .max(50, "you reached the max number of characters")
+            .required("Required"),
+    })
+
+
     const dispatch = useDispatch();
+
+    const handleEditContact = (values) => {
+        const updatedData = { name: values.name, number: values.number };
+        dispatch(editContact({ contactsId: id, updatedData }));
+        onCancel();
+    };
+
 
     return (
         <div>
 
             <Formik
                 initialValues={{id, name, number}}
-                validationSchema={Yup.object({
-                    name: Yup.string().required('Required').min(3, 'Мінімальна кількість символів - 3').max(50, 'Максимальна кількість символів - 50'),
-                    number: Yup.string().required('Required').min(3, 'Мінімальна кількість символів - 3').max(50, 'Максимальна кількість символів - 50'),
-                })}
-                onSubmit={(values) => {
-                    const {id, name, number} = values;
-                    dispatch(editContact({
-                        id,
-                        name,
-                        number
-                    }))
-                    onCancel();
-                }}
+                validationSchema={ContactsSchema}
+                onSubmit={handleEditContact}
             >
-                <Form>
+                <Form autoComplete="off">
                     <div>
                         <Field type="name" name="name" id="name"/>
                         <ErrorMessage name="name" component="div"/>
