@@ -16,35 +16,35 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(register.pending, (state) => {
-        state.contacts.loading = true;
-        state.contacts.error = false;
+        state.loading = true;
+        state.error = false;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.contacts.loading = false;
+        state.loading = false;
       })
       .addCase(register.rejected, (state) => {
-        state.contacts.loading = false;
-        state.contacts.error = true;
+        state.loading = false;
+        state.error = true;
       })
       .addCase(login.pending, (state) => {
-        state.contacts.loading = true;
-        state.contacts.error = false;
+        state.loading = true;
+        state.error = false;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.contacts.loading = false;
+        state.loading = false;
       })
       .addCase(login.rejected, (state) => {
-        state.contacts.loading = false;
-        state.contacts.error = true;
+        state.loading = false;
+        state.error = true;
       })
       .addCase(logout.pending, (state) => {
-        state.contacts.loading = true;
+        state.loading = true;
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = {
@@ -55,8 +55,8 @@ const authSlice = createSlice({
         state.isLoggedIn = false;              
       })
       .addCase(logout.rejected, (state) => {
-        state.contacts.loading = false;
-        state.contacts.error = true;
+        state.loading = false;
+        state.error = true;
       })
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;

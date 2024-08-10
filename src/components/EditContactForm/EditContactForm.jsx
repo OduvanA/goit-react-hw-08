@@ -4,9 +4,8 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 
 const EditContactForm = ({ id, name, number, onCancel }) => {
-
-    const ContactsSchema = Yup.object().shape({
-        name: Yup.string()
+  const ContactsSchema = Yup.object().shape({
+      name: Yup.string()
             .trim()
             .min(3, "name must be at least 3 characters")
             .max(50, "you reached the max number of characters")
@@ -22,9 +21,14 @@ const EditContactForm = ({ id, name, number, onCancel }) => {
     const dispatch = useDispatch();
 
     const handleEditContact = (values) => {
-        const updatedData = { name: values.name, number: values.number };
-        dispatch(editContact({ contactsId: id, updatedData }));
-        onCancel();
+
+        const {id, name, number} = values;
+                    dispatch(editContact({
+                        contactId: id,
+                        name,
+                        number
+                    }))
+                    onCancel();
     };
 
 
