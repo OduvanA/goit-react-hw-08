@@ -10,7 +10,7 @@ export default function UserMenu() {
   return (
     <div className={css.container}>
       <p className={css.welcome}>Welcome, {user.name}!</p>
-      <button className={css.button} type='button' onClick={() => dispatch(logout())}>Logout</button>
+      <button className={css.button} type='button' onClick={() => dispatch(logout())}>Sign Out</button>
     </div>
   );
 }

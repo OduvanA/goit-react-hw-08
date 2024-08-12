@@ -4,7 +4,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(213, 213, 213);
-    background: radial-gradient(circle, rgba(213, 213, 213, 1) 0%, rgba(145, 144, 144, 1) 100%);
+    background: radial-gradient(circle, rgba(213, 213, 213, 1) 0%, rgb(190, 190, 190) 100%);
   padding: 10px 20px;
 }
 

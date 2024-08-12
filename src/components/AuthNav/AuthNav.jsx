@@ -13,7 +13,7 @@ export default function AuthNav() {
         Register
       </NavLink>
       <NavLink className={buildLinkClass} to='/login'>
-        Log in
+        Sign in
       </NavLink>
     </div>
   )
