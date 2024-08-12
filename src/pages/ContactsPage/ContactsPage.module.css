@@ -1,0 +1,18 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.title {
+  color: rgb(41, 40, 40);
+  margin-top: 60px;
+  text-align: center;
+}
+
+.text {
+  color: rgb(41, 40, 40);
+  margin-bottom: 30px;
+  text-align: center;
+}

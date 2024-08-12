@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome {
+  font-weight: 600;
+  color: #2e2c2c;
+}
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(107, 17, 77);
+  color: #fff;
+  font-size: 16px;
+  transition: background-color 300ms;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #e22c90;
+}
+

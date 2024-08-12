@@ -1,14 +1,14 @@
 
 import { Routes, Route } from 'react-router';
 import { lazy, Suspense, useEffect } from 'react';
-// import { FadeLoader } from "react-spinners";
-
+import { BarLoader } from 'react-spinners'
 import Layout from '../Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from '../../redux/auth/operations';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import RestrictedRoute from '../RestrictedRoute';
 import PrivatedRoute from '../PrivateRoute';
+import css from './App.module.css'
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() => import('../../pages/RegistrationPage/RegistrationPage'));
@@ -24,7 +24,7 @@ export default function App() {
   }, [dispatch])
 
   return isRefreshing ? (
-      <div>Loading, please wait... </div>
+      <div className={css.loader}><BarLoader color="gray" width={200}/></div>
   ) : (
     <Layout>
       <Suspense fallback={<div>Loading....</div>}>

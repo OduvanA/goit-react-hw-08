@@ -6,11 +6,18 @@
   font-size: 18px;
 }
 
-.navLink {
-  font-weight: 600;
-  color: rgb(33, 14, 64);
+.link.active {
+  color: rgb(48, 3, 3);
 }
 
-.active {
-  color: rgb(255, 194, 103);
+.link {
+  color: #424242;
+  text-decoration: none;
+  padding: 5px 9px;
+  border-radius: 4px;
+  transition: background-color 300ms;
+}
+
+.link:hover, .link.active {
+  background-color: #e22c90;
 }

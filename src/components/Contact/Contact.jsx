@@ -17,38 +17,34 @@ export default function Contact({ contact: { id, name, number } }) {
         setDeleteModal(false);
     };
 
-    const handleClickModal = (e) => {
-        e.stopPropagation();
-    };
+
 
     return(
-        <div className={css.container}>
+        <div >
             {!isEditing ? (
-                <div >
-                    <div >
-                        <p><IoPerson className={css.icon} size="14" />
+                <div className={css.container}>
+                    <div className={css.wrapper}>
+                    <p className={css.icon}><IoPerson className={css.icon} size="14" />
                         {name}</p>
+                    <p className={css.icon}><FaPhone className={css.icon} size="14" />
+                        {number}</p>                         
                     </div>
-                    <div >
-                        <p><FaPhone className={css.icon} size="14" />
-                        {number}</p> 
-                    </div>
-                    <div >
-                        <button onClick={() => setIsEditing(true)}>Edit</button>
-                        <button onClick={() => setDeleteModal(true)}>Delete</button>
+
+                    <div className={css.btnWrapper}>
+                        <button className={css.button} onClick={() => setIsEditing(true)}>Edit</button>
+                        <button className={css.button} onClick={() => setDeleteModal(true)}>Delete</button>
                     </div>
                 </div>
             ) : (
                 <EditContactForm id={id} name={name} number={number} onCancel={() => setIsEditing(false)} />
             )}
             {deleteModal && (
-                <div  onClick={() => setDeleteModal(false)}>
-                    <div onClick={handleClickModal}>
-                        <p>Are you sure you want to delete this contact?</p>
-                        <div>
-                            <button onClick={handleDelete}>Yes</button>
-                            <button onClick={() => setDeleteModal(false)}>No</button>
-                        </div>
+                <div className={css.deleteModal} onClick={() => setDeleteModal(false)}>
+                    <div className={css.containerModal}>
+                        
+                        <p className={css.text}>This contact will be deleted from your phonebook</p>
+                        <div className={css.delete} onClick={handleDelete}>Delete Contact</div>
+                        <div className={css.cancel} onClick={() => setDeleteModal(false)}>Cancel</div>
                     </div>
                 </div>
             )}

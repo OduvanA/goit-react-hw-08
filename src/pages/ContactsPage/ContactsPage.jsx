@@ -21,10 +21,11 @@ export default function ContactsPage() {
 
   return (
   <div className={css.container}>
-      <h1>Phonebook</h1>
+      <h1 className={css.title}>MyContacts App</h1>
+      <p className={css.text}>create your phonebook</p>
       <ContactForm  />
       <SearchBox />
-      {isLoading && <FadeLoader color='gray' height={10}/>}
+      {isLoading && <div className={css.loader}><FadeLoader color='gray' height={10}/></div> }
       {isError && <p className={css.error}>Oops! Something went wrong, please try again later.</p>}
       <ContactList />
     </div >
