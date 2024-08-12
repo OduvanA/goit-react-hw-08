@@ -6,7 +6,7 @@ import { selectError, selectLoading } from '../../redux/contacts/selectors';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import ContactList from '../../components/ContactList/ContactList';
-import { FadeLoader } from "react-spinners";
+import { BarLoader } from "react-spinners";
 import css from './ContactsPage.module.css'
 
 export default function ContactsPage() {
@@ -25,7 +25,7 @@ export default function ContactsPage() {
       <p className={css.text}>create your phonebook</p>
       <ContactForm  />
       <SearchBox />
-      {isLoading && <div className={css.loader}><FadeLoader color='gray' height={10}/></div> }
+      {isLoading && <div className={css.loader}><BarLoader color="gray" width={200}/></div> }
       {isError && <p className={css.error}>Oops! Something went wrong, please try again later.</p>}
       <ContactList />
     </div >
